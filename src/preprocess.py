@@ -56,7 +56,7 @@ preprocess_pipeline = ColumnTransformer(
             FunctionTransformer(floor_extractor, kw_args={"col": "floor"}),
             ["floor"],
         ),
-        ("category_encoder", TargetEncoder, CAT_FEATURES),
+        ("category_encoder", TargetEncoder(), CAT_FEATURES),
     ],
     remainder="passthrough",
     verbose_feature_names_out=False,
